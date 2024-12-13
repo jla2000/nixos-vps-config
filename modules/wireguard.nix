@@ -22,6 +22,13 @@ in
       ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.100.0.0/24 -o ${networkInterface} -j MASQUERADE
     '';
 
-    privateKeyFile = "/root/wireguard-keys/private";
+    privateKeyFile = "/root/wireguard-keys/private-server";
+
+    peers = [
+      {
+        publicKey = "M3sd2dVfWfdH3CaTR4OYe0Zf4AtM9Zk5jjqULNPR0zk=";
+        allowedIPs = [ "10.100.0.2/32" ];
+      }
+    ];
   };
 }
