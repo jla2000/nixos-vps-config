@@ -4,7 +4,7 @@
   };
 
   outputs = { self, nixpkgs }: {
-    nixosConfigurations.hetzner-vps = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos-vps = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       modules = [ ./configuration.nix ];
     };
