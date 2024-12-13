@@ -6,7 +6,10 @@
   outputs = { self, nixpkgs }: {
     nixosConfigurations.nixos-vps = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
-      modules = [ ./configuration.nix ];
+      modules = [ 
+        ./configuration.nix
+        { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
+      ];
     };
   };
 }

@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./modules/sshd.nix
     ./modules/minecraft.nix
+    ./modules/wireguard.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
